@@ -10,7 +10,7 @@ Included Utilities
 
 #### `test-image-size.sh`
 
-Use `test-image-size.sh` script to test the size of an image, in MB, against a threshold.
+Use the `test-image-size.sh` script to test the size of an image, in MB, against a threshold.
 
 ##### Usage
 
@@ -24,4 +24,17 @@ The following will exit with a 0 status code if the _foo_ image is less than or 
 
 ```sh
 docker-util/sh/test-image-size.sh -i foo -t 25
+```
+
+#### `update-docker-on-travis.sh`
+
+Use the `update-docker-on-travis.sh` script to update the Docker installation. You will typically run this in a Travis container, via _.travis.yml_.
+
+##### Usage
+
+_.travis.yml_
+```yml
+before_install:
+  - ./docker-util/sh/update-docker-on-travis.sh
+  - sudo dockerd --experimental &
 ```
