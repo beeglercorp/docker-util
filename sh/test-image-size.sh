@@ -20,6 +20,7 @@ EOM
   exit 0
 }
 
+# show usage instructions if run without arguments
 [ -z $1 ] && { usage; }
 
 while getopts ":hi:t:" opt; do
