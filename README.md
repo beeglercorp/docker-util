@@ -12,22 +12,34 @@ Installing
     git submodule add https://github.com/beeglercorp/docker-util.git
     ```
 
-1. You may wish to use a particular version. To update the submodule to use a specific release (i.e. [tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging)), run the following, making sure to replace _{VERSION}_ with the version you desire.
-
-    ```sh
-    cd docker-util
-    git checkout v{VERSION}
-    cd ../
-    ```
-
 1. You probably don't care about the history, so configure the submodule to clone shallowly.
 
     ```sh
     git config -f .gitmodules submodule.docker-util.shallow true
     ```
 
-Included Utilities
-------------------
+Choosing a Version, and/or Updating
+-----------------------------------
+
+You may wish to use a particular version. To update the submodule to use a specific release (i.e. [tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging)), run the following, making sure to replace _{VERSION}_ with the version you desire.
+
+    ```sh
+    cd docker-util
+    git fetch --tags
+    git checkout v{VERSION}
+    cd ../
+    ```
+
+If you prefer to use a branch, rather than a version (see above), periodically you will want to pull in the latest commits from the remote repository.
+
+```sh
+git submodule update --recursive --remote docker-util
+```
+
+Then, commit and push as usual.
+
+Using a Utility
+---------------
 
 ### docker-util/sh/
 
