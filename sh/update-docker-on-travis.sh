@@ -7,5 +7,5 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 sudo apt-get -y install docker-ce
 sudo service docker stop
-sudo dockerd --experimental &
+sudo dockerd --experimental
 docker version
