@@ -6,7 +6,7 @@ This repository hosts utilities used by other repositories that build or manage 
 Included Utilities
 ------------------
 
-### docker-util/sh/ Scripts
+### docker-util/sh/
 
 #### `test-image-size.sh`
 
@@ -26,15 +26,15 @@ The following will exit with a 0 status code if the _foo_ image is less than or 
 docker-util/sh/test-image-size.sh -i foo -t 25
 ```
 
-#### `update-docker-on-travis.sh`
+#### `install-docker-on-trusty.sh`
 
-Use the `update-docker-on-travis.sh` script to update the Docker installation. You will typically run this in a Travis container, via _.travis.yml_.
+Use the `install-docker-on-trusty.sh` script to update the Docker installation. You will typically run this in a Travis container, via _.travis.yml_.
 
 ##### Usage
 
 _.travis.yml_
 ```yml
 before_install:
-  - ./docker-util/sh/update-docker-on-travis.sh
+  - ./docker-util/sh/install-docker-on-trusty.sh
   - sudo dockerd --experimental &
 ```
