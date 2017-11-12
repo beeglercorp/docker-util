@@ -11,7 +11,7 @@ usage () {
 
     $(basename $0)  -i <image> -t <threshold>
 
-   -h, Show this usage message.
+   -h  Show this usage message.
    -i  {String} image The name of the Docker image to test.
    -t  {int} threshold A number, in MB, which the image size may not exceed.
        If the image size exceeds the threshold, the script will exit with a 1
