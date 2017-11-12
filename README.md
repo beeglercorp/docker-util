@@ -23,12 +23,12 @@ Choosing a Version, and/or Updating
 
 You may wish to use a particular version. To update the submodule to use a specific release (i.e. [tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging)), run the following, making sure to replace _{VERSION}_ with the version you desire.
 
-    ```sh
-    cd docker-util
-    git fetch --tags
-    git checkout v{VERSION}
-    cd ../
-    ```
+```sh
+cd docker-util
+git fetch --tags
+git checkout v{VERSION}
+cd ../
+```
 
 If you prefer to use a branch, rather than a version (see above), periodically you will want to pull in the latest commits from the remote repository.
 
