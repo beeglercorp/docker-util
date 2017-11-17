@@ -43,6 +43,54 @@ Using a Utility
 
 ### docker-util/sh/
 
+#### `compare-images.sh`
+
+Use the `compare-images.sh` script to compare 2 images by name. See the [`docker save`](https://docs.docker.com/engine/reference/commandline/save/) documentation for valid _IMAGE_ parameter values.
+
+##### Usage
+
+```sh
+docker-util/sh/compare-images.sh <IMAGE> <IMAGE>
+```
+
+##### Examples
+
+###### Success (`exit 0`)
+
+The following will exit with a 0 status code if both _foo_ and _bar_ images exist, and the _foo_ image produces an identical archive as the _bar_ image.
+
+```sh
+docker-util/sh/compare-images.sh foo bar
+```
+
+###### Failure (`exit 1`)
+The following all exit with a 1 status code.
+
+```sh
+# given _foo_ and _bar_ exist, but differ
+docker-util/sh/compare-images.sh foo bar
+```
+
+```sh
+# given the _foo_ image does not exist
+docker-util/sh/compare-images.sh foo bar
+```
+
+```sh
+# given the _bar_ image does not exist
+docker-util/sh/compare-images.sh foo bar
+```
+
+```sh
+# too few arguments
+docker-util/sh/compare-images.sh foo
+```
+
+```sh
+# too many arguments
+docker-util/sh/compare-images.sh foo bar baz
+```
+
 #### `install-docker-on-trusty.sh`
 
 Use the `install-docker-on-trusty.sh` script to update the Docker installation. You will typically run this in a Travis container, via _.travis.yml_.
