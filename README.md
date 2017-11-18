@@ -64,6 +64,7 @@ docker-util/sh/compare-images.sh foo bar
 ```
 
 ###### Failure (`exit 1`)
+
 The following all exit with a 1 status code.
 
 ```sh
@@ -98,6 +99,7 @@ Use the `install-docker-on-trusty.sh` script to update the Docker installation. 
 ##### Usage
 
 _.travis.yml_
+
 ```yml
 before_install:
   - ./docker-util/sh/install-docker-on-trusty.sh
@@ -130,4 +132,32 @@ The following will exit with a 0 status code if the _foo_ image is less than or 
 
 ```sh
 docker-util/sh/test-image-size.sh -i foo -t 25
+```
+
+#### `validate-alpine-version.sh`
+
+Use the `validate-alpine-version.sh` script to ensure that your container runs on an expected Alpine version.
+
+##### Usage
+
+```sh
+docker-util/sh/validate-alpine-version.sh -i <image> -v 3.6
+```
+
+##### Examples
+
+###### Success (`exit 0`)
+
+The following will exit with a 0 status code.
+
+```sh
+docker-util/sh/validate-alpine-version.sh -i beeglercorp/travis-cli:alpine-3.5 -v 3.5
+```
+
+###### Failure (`exit 1`)
+
+The following will exit with a 1 status code.
+
+```sh
+docker-util/sh/validate-alpine-version.sh -i beeglercorp/travis-cli:alpine-3.5 -v 3.6
 ```
