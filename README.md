@@ -43,6 +43,24 @@ Using a Utility
 
 ### docker-util/sh/
 
+#### `attempt.sh`
+
+Use the `attempt.sh` script to register the `attempt` command. You may use this to retry fickle commands, such as `docker version`, that may fail during certain encounter race conditions.
+
+##### Usage
+
+```sh
+source docker-util/sh/attempt.sh && attempt <expression>
+```
+
+##### Example
+
+The following will execute the `docker login` command up to 5 times, pausing 1 second in between attempts. If the _docker login_ expression exits with a 0 status code during any of the attempts, the script will simply echo the expression's output. Otherwise it will log stdout and stderr, and exit with a 1 status code after the 5th attempt.
+
+```sh
+source docker-util/sh/attempt.sh && attempt docker login
+```
+
 #### `compare-images.sh`
 
 Use the `compare-images.sh` script to compare 2 images by name. See the [`docker save`](https://docs.docker.com/engine/reference/commandline/save/) documentation for valid _IMAGE_ parameter values.
