@@ -1,10 +1,6 @@
 #!/bin/bash
 
 
-# recommended by travis-ci
-# @see https://docs.travis-ci.com/user/customizing-the-build/#Implementing-Complex-Build-Steps
-set -ev
-
 # @see https://stackoverflow.com/questions/687780/documenting-shell-scripts-parameters
 usage () {
     cat <<EOM
