@@ -45,7 +45,7 @@ Using a Utility
 
 #### `attempt.sh`
 
-Use the `attempt.sh` script to register the `attempt` command. You may use this to retry fickle commands, such as `docker version`, that may fail during certain encounter race conditions.
+Use the `attempt.sh` script to register the `attempt` command. You may use this to retry fickle commands, such as `docker version`, that may fail during certain race conditions.
 
 ##### Usage
 
